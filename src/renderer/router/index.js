@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/housekeeping',
       name: 'Housekeeping',
-      component: require('@/components/housekeeping ').default,
+      component: require('@/components/HouseKeeping').default,
     },
   ],
 });

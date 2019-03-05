@@ -55,8 +55,10 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "echarts": "^4.1.0",
     "material-design-icons-iconfont": "^4.0.5",
     "vue": "^2.5.16",
+    "vue-echarts": "^4.0.1",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
     "vuetify": "^1.5.4",

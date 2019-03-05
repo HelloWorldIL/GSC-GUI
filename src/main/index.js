@@ -24,6 +24,7 @@ function createWindow() {
   });
 
   mainWindow.loadURL(winURL);
+  mainWindow.setAutoHideMenuBar(true)
 
   mainWindow.on('closed', () => {
     mainWindow = null;
