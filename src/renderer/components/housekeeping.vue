@@ -1,12 +1,12 @@
 <template lang="pug">
-Chart
+Table
 </template>
 
 <script>
-import Chart from '@/components/Chart/chart.vue'
+import Table from "@/components/HouseKeeping/table.vue";
 export default {
   components: {
-    Chart,
+    Table,
   },
-}
+};
 </script>
