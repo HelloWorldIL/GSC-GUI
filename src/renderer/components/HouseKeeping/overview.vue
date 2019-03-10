@@ -1,35 +1,18 @@
 <template lang="pug">
   v-data-table(:headers="this.$store.state.houseKeeping.headers" :items="items" hide-actions)
     template(v-slot:items="props")
-      td(:class="{ inRange: props.item.inRange }") {{ props.item.id }}
-      td(:class="{ inRange: props.item.inRange }") {{ props.item.name }}
-      td(:class="{ inRange: props.item.inRange }") {{ props.item.value }}
-      td(:class="{ inRange: props.item.inRange }") {{ props.item.unit }}
-      td(:class="{ inRange: props.item.inRange }") {{ props.item.range }}
+      tr(:class="{ inRange: props.item.inRange, notInRange: !props.item.inRange}")
+        td() {{ props.item.id }}
+        td() {{ props.item.name }}
+        td() {{ props.item.value }}
+        td() {{ props.item.unit }}
+        td() {{ props.item.range }}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      items2s: [
-        {
-          id: '205',
-          name: 'Batt_volt',
-          value: 8.0,
-          unit: 'V',
-          range: '7-10',
-          inRange: true,
-        },
-        {
-          id: '205',
-          name: 'Batt_volt',
-          value: 5,
-          unit: 'V',
-          range: '7-10',
-          inRange: false,
-        },
-      ],
     }
   },
   computed: {
@@ -54,6 +37,13 @@ export default {
 
 <style lang="sass" scoped>
 .inRange
-  background-color: #4CAF50
+  background-color: #4CAF50 !important
   color: white
+.inRange:hover
+  background-color: #66BB6A !important
+.notInRange
+  color: white
+  background-color: #F44336 !important
+.notInRange:hover
+  background-color: #EF5350 !important
 </style>

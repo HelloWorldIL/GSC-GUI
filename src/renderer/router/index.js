@@ -18,6 +18,16 @@ export default new Router({
       path: '/housekeeping',
       name: 'Housekeeping',
       component: require('@/components/HouseKeeping').default,
+      children: [
+        {
+          path: 'overview',
+          component: require('@/components/HouseKeeping/overview').default,
+        },
+        {
+          path: 'main',
+          component: require('@/components/HouseKeeping/main').default,
+        },
+      ],
     },
   ],
 });

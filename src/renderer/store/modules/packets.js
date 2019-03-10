@@ -16,8 +16,8 @@ const state = {
     },
   ],
   packets: [
-    { id: 205, value: 50.1 },
-    { id: 206, value: 8.0 },
+    { id: 205, value: 50.1, groundTime: 'placeHolder' },
+    { id: 206, value: 8.0, groundTime: 'placeHolder' },
   ],
 }
 
