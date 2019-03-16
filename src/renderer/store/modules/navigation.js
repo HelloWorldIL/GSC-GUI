@@ -1,7 +1,7 @@
 const state = {
   routes: [
     { link: '/', title: 'Dashboard', icon: 'dashboard' },
-    { link: '/housekeeping', title: 'HouseKeeping', icon: 'home' },
+    { link: '/housekeeping/overview', title: 'HouseKeeping', icon: 'home' },
   ],
 }
 

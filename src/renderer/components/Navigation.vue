@@ -12,7 +12,7 @@ nav
     v-toolbar-side-icon(@click="drawer = !drawer")
     v-toolbar-title() {{this.$route.name}}
     v-spacer
-    v-btn(flat round) Send Commands
+    v-btn(flat round) Command Catalog
 </template>
 
 <script lang="ts">
