@@ -27,6 +27,10 @@ export default new Router({
           path: 'main',
           component: require('@/components/HouseKeeping/main').default,
         },
+        {
+          path: 'last',
+          component: require('@/components/HouseKeeping/lastPass').default,
+        },
       ],
     },
   ],
