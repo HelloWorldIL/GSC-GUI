@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-data-table(:headers="this.$store.state.houseKeeping.headers" :items="items" hide-actions)
+  v-data-table(:headers="this.$store.state.houseKeeping.overview.headers" :items="items" hide-actions)
     template(v-slot:items="props")
       tr(:class="{ inRange: props.item.inRange, notInRange: !props.item.inRange}")
         td() {{ props.item.id }}
@@ -26,7 +26,7 @@ export default {
           name: type.name,
           unit: type.unit,
           range: `${type.rangeMin}-${type.rangeMax}`,
-          inRange: !(packetTemp.value > type.rangeMax || packetTemp.value < type.rangeMin),
+          inRange: this.$store.getters.isPacketInRange(packetTemp),
         })
       });
       return items
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .inRange
   background-color: #4CAF50 !important
   color: white
