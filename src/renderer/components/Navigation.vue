@@ -15,7 +15,7 @@ nav
     v-btn(flat round) Command Catalog
 </template>
 
-<script lang="ts">
+<script>
 import drawerItem from './Navigation/drawerItem.vue'
 export default {
   components: {

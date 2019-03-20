@@ -10,15 +10,18 @@
 </template>
 
 <script>
+import { Packet } from '@/modals/packet.ts'
+
 export default {
   data() {
     return {
+      types: Packet.Types,
     }
   },
   computed: {
     items() {
       const items = []
-      this.$store.state.packets.types.forEach((type) => {
+      this.types.forEach((type) => {
         const packetTemp = this.$store.getters.getLatestPacketById(type.id)
         items.push({
           id: type.id,
@@ -26,7 +29,7 @@ export default {
           name: type.name,
           unit: type.unit,
           range: `${type.rangeMin}-${type.rangeMax}`,
-          inRange: this.$store.getters.isPacketInRange(packetTemp),
+          inRange: packetTemp.isPacketInRange(),
         })
       });
       return items

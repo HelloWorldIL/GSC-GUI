@@ -1,3 +1,5 @@
+import { Packet } from '../../modals/packet.ts'
+
 const state = {
   types: [
     {
@@ -16,21 +18,14 @@ const state = {
     },
   ],
   packets: [
-    { id: 205, value: 50.1, groundTime: 'placeHolder' },
-    { id: 206, value: 8.0, groundTime: 'placeHolder' },
-    { id: 205, value: 40, groundTime: 'XDD' },
+    new Packet(205, 50.1, 'placeHolder'),
+    new Packet(206, 8.0, 'placeHolder'),
+    new Packet(205, 4.0, 'placeHolder'),
   ],
 }
 
 const getters = {
   getLatestPacketById: state => id => state.packets.find(packet => packet.id === id),
-  getPacketType: state => packet => state.types.find(type => packet.id === type.id),
-  isPacketInRange: (state, getters) => (packet) => {
-    const type = getters.getPacketType(packet)
-    if (packet.value > type.rangeMax || packet.value < type.rangeMin) return false
-    return true
-  },
-  getPacketTypesName: state => Array.from(state.types, type => type.name),
 }
 
 export default {
